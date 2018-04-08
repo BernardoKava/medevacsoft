@@ -24,7 +24,7 @@ CaseMails Sent (<%= current_user.mailbox.sentbox.count %>) |
 <% end %>
 
 <hr />
-  <%= will_paginate @conversations %>
+  <%= will_paginate @conversation %>
 <hr />
 
 <%= link_to "CaseMails [All]", all_conversations_path, class: "btn btn-primary" %>

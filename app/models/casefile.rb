@@ -1,0 +1,2 @@
+class Casefile < ApplicationRecord
+end

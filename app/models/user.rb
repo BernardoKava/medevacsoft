@@ -16,4 +16,5 @@ class User < ApplicationRecord
   end
 
   has_many :medevaccases
+  has_many :posts, dependent: :destroy
 end

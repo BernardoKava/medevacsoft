@@ -1,0 +1,28 @@
+
+
+<div>
+
+  <% @dashboard.order( :created_at).each do |post| %>
+
+    <div>
+
+      <span class="postdisplay"> <%= link_to post.content, post %></span>
+
+      <h6>Broadcasted by:</h6>
+      <h6><%= link_to post.email, post.user %></h6>
+      <h6>  Posted <%= time_ago_in_words(post.created_at) %> ago. </h6>
+      <hr/>
+    </div>
+
+
+  <% end %>
+
+  <%= will_paginate @dashboard %>
+</div>
+
+
+
+
+
+
+

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :posts
   resources :insurers
   resources :serviceproviders
   resources :rhospitals

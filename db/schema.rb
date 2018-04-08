@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180407204417) do
+ActiveRecord::Schema.define(version: 20180408170658) do
 
   create_table "accompanyingpeople", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20180407204417) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "medevaccase_id"
+  end
+
+  create_table "casefiles", force: :cascade do |t|
+    t.string "title"
+    t.integer "medevaccase_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "casenotes", force: :cascade do |t|
@@ -140,6 +147,7 @@ ActiveRecord::Schema.define(version: 20180407204417) do
     t.integer "hospital_id"
     t.integer "rhospital_id"
     t.float "cost"
+    t.string "document"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -154,6 +162,14 @@ ActiveRecord::Schema.define(version: 20180407204417) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "medevaccase_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "content"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "pvettinginfos", force: :cascade do |t|

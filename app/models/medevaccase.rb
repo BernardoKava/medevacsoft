@@ -12,4 +12,19 @@ class Medevaccase < ApplicationRecord
   accepts_nested_attributes_for :contactpeople, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :stakeholders, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :casenotes, reject_if: :all_blank, allow_destroy: true
+
+  mount_uploader :document, DocumentUploader
+  validate              :document_size
+
+
+
+  private
+  # Validates the size of an uploaded document.
+  def document_size
+    if document.size > 400.megabytes
+      errors.add(:picture, "should be less than 400MB")
+    end
+  end
+
+
 end

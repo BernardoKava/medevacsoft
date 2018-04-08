@@ -222,19 +222,21 @@
 
 
 
+<div>
+  <p>
+    <strong>Case Notes:</strong>
+    <textarea rows="4" cols="50" readonly>
+    <%= @medevaccase.notes %>
+    </textarea>
+  </p>
 
+  <p>
+    <strong>Mission Complete:</strong>
+    <%= @medevaccase.missioncomplete %>
+  </p>
 
-<p>
-  <strong>Case Notes:</strong>
-  <textarea rows="4" cols="50" readonly>
-  <%= @medevaccase.notes %>
-  </textarea>
-</p>
+</div>
 
-<p>
-  <strong>Mission Complete:</strong>
-  <%= @medevaccase.missioncomplete %>
-</p>
 
 <%= link_to 'Pick', edit_medevaccase_path(@medevaccase), class:"btn btn-info" %> |
 <%= link_to 'Back', medevaccases_path, class:"btn btn-info" %>

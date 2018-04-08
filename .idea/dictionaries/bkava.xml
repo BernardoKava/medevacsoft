@@ -3,6 +3,7 @@
     <words>
       <w>accompanyingpeople</w>
       <w>accompanyingperson</w>
+      <w>broadcasted</w>
       <w>casebycompany</w>
       <w>casenotes</w>
       <w>caseownercompany</w>
@@ -10,10 +11,12 @@
       <w>chospitalname</w>
       <w>companyalias</w>
       <w>contactpeople</w>
+      <w>dashboardcontent</w>
       <w>expediating</w>
       <w>lname</w>
       <w>misceleneous</w>
       <w>patientconsent</w>
+      <w>postdisplay</w>
       <w>rhospital</w>
     </words>
   </dictionary>

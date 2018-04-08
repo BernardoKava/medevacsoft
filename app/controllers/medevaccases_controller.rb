@@ -114,15 +114,18 @@ class MedevaccasesController < ApplicationController
                                           :startDate, :completionDate, :toCountry, :fromCountry, :hospital_id,
                                           :rhospital_id,
                                           :notes, :missioncomplete,
-                                          :email, :caseownercompany, :cost,
+                                          :email, :caseownercompany, :cost, :document,
                                           patients_attributes: [:id, :fname, :lname, :dob, :diagnosis,
                                                                 :treatment, :phone, :email, :nationality, :_destroy],
                                           accompanyingpeople_attributes: [:id, :name, :phone, :email, :nationality,
                                                                           :relationship, :patientconsent, :_destroy],
                                           contactpeople_attributes:[:id, :name, :phone, :email,
-                                                                    :relationship, :patientconsent, :medevaccase_id, :_destroy],
+                                                                    :relationship, :patientconsent, :medevaccase_id,
+                                                                    :_destroy],
                                           stakeholders_attributes: [:id, :name, :phone, :email, :relationship,
                                                                     :patientconsent, :_destroy],
                                           casenotes_attributes: [:id, :casephase, :notes, :_destroy])
     end
+
+
 end

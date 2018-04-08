@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<hr/>
+
+<p>
+  <strong>Email:</strong>
+  <%= @post.email %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <textarea rows="4" cols="50" readonly>
+  <%= @post.content %>
+  </textarea>
+</p>
+
+
+
+<hr/>
+
+<% if current_user == dispatcher %>
+  <%= link_to 'Edit', edit_post_path(@post) %> <br/>
+  <%= link_to 'Back', posts_path %><br/>
+  <%= link_to 'Dashboard', dashboard_index_path %><br/>
+<% else %>
+  <%= link_to 'Back', posts_path %><br/>
+  <%= link_to 'Dashboard', dashboard_index_path %><br/>
+<% end %>

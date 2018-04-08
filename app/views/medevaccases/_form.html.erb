@@ -158,7 +158,27 @@
     <%= link_to_add_association 'Add Case-Phase', f, :casenotes %>
     <p class="count">Total: <span><%= @medevaccase.casenotes.count %></span></p>
   </div>
-  </div>
+
+
+  <hr/>
+  <strong><h2>J. Document Upload </h2></strong>
+  <hr/>
+
+  <span class="picture">
+    <%= f.file_field :document %>
+  </span>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   <hr/>
@@ -177,6 +197,8 @@
     </div>
 
   </div>
+
+
 
 
 
