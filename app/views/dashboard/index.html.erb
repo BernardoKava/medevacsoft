@@ -5,37 +5,31 @@
 <% if current_user.dispatcher == true %>
   <h2>My Dashboard</h2>
   <h2>[[i]] Dispatcher</h2>
-<hr />
+  <hr />
   <% if current_user.admin == true %>
     <strong><p class="alert">[[i]] Admin</p></strong>
   <% else %>
     <strong><p class="alert">[[i]] Non-Admin</p></strong>
   <% end %>
-<hr />
-
+  <hr />
   <div class = "horizontal-menu">
     <ul>
-      <li><%= link_to "Directories", '#'%></li>
+      <li><%= link_to "Open Cases", medevaccases_dispatcheropencases_path %></li>
+      <li><%= link_to "Closed Cases", medevaccases_dispatcherclosedcases_path %></li>
+      <li><%= link_to "Medevac Cases [All]", medevaccases_dispatcherindex_url %></li>
       <li><%= link_to "CaseMails", all_conversations_path %></li>
       <li><%= link_to "Hospitals", hospitals_path %></li>
-      <li><%= link_to "Medevac Cases [All]", medevaccases_dispatcherindex_url %></li>
-      <li><%= link_to "Open Cases", medevaccases_dispatcheropencases_path %></li>
-      <li><%= link_to "Closed Cases", medevaccases_dispatcheropencases_path %></li>
-      <li><%= link_to "Posts", posts_path %></li>
+      <li><%= link_to "Service Providers", serviceproviders_path %></li>
+      <li><%= link_to "Insurers", insurers_path %></li>
       <% if current_user.admin == true %>
-        <li><%= link_to "Administration Area", rails_admin_path %></li>
         <li><%= link_to "Rhospitals", rhospitals_path %></li>
+        <li><%= link_to "Administration Area", rails_admin_path %></li>
+        <li><%= link_to "Hospitals", hospitals_path %></li>
         <li><%= link_to "Service Providers", serviceproviders_path %></li>
         <li><%= link_to "Insurers", insurers_path %></li>
       <% end %>
-
-      <% if current_user.clientadmin == true %>
-        <li><%= link_to "Management View", medevaccases_distribution_path %></li>
-      <% end %>
     </ul>
-
   </div>
-
 <% else %>
   <h2>My Dashboard</h2>
   <hr />
@@ -43,20 +37,21 @@
     <div>
 
     <hr />
+      <% if current_user.vetted == true %>
       <div class = "horizontal-menu">
         <ul>
-          <li><%= link_to "Open New-Case", new_medevaccase_path %></li>
-          <li><%= link_to "View Closed Cases", '#'%></li>
+          <li><%= link_to "Open NewCase", new_medevaccase_path %></li>
+          <li><%= link_to "Open Cases", medevaccases_opencases_path %></li>
+          <li><%= link_to "Closed Cases", medevaccases_closedcases_path%></li>
+          <li><%= link_to "Medevac Cases [All]", medevaccases_path %></li>
           <li><%= link_to "CaseMails", all_conversations_path %></li>
           <li><%= link_to "Hospitals", hospitals_path %></li>
-          <li><%= link_to "Medevac Cases [All]", medevaccases_path %></li>
-          <li><%= link_to "Posts", posts_path %></li>
-          <li><%= link_to "Directories", '#' %></li>
-          <li><%= link_to "Open Cases", medevaccases_opencases_path %></li>
-          <li><%= link_to "Closed Cases", medevaccases_closedcases_path %></li>
+          <li><%= link_to "Service Providers", serviceproviders_path %></li>
+          <li><%= link_to "Insurers", insurers_path %></li>
           <% if current_user.clientadmin == true %>
             <li><%= link_to "Management View", medevaccases_distribution_path %></li>
           <% end %>
+      <% end %>
         </ul>
 
       </div>

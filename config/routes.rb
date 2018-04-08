@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'prereg/index'
+
   resources :posts
   resources :insurers
   resources :serviceproviders
@@ -19,6 +21,8 @@ Rails.application.routes.draw do
   get 'medevaccases/dispatcherindex'
 
   get 'medevaccases/dispatcheropencases'
+
+  get 'medevaccases/dispatcherclosedcases'
 
   get 'medevaccases/opencases'
 

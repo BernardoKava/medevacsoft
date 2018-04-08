@@ -23,6 +23,13 @@ class MedevaccasesController < ApplicationController
     render action: :index
   end
 
+  def dispatcherclosedcases
+    @title = '[Closed Cases - Dispatcher View]'
+    @elem = 'Yes'
+    @medevaccases = Medevaccase.where(missioncomplete: @elem)
+    render action: :index
+  end
+
   def opencases
     @title = '[Open Cases]'
     @elem = 'No'
@@ -124,7 +131,8 @@ class MedevaccasesController < ApplicationController
                                                                     :_destroy],
                                           stakeholders_attributes: [:id, :name, :phone, :email, :relationship,
                                                                     :patientconsent, :_destroy],
-                                          casenotes_attributes: [:id, :casephase, :notes, :_destroy])
+                                          casenotes_attributes: [:id, :casephase, :notes, :_destroy],
+                                          casefiles_attibutes: [:id, :title, :document, :_destroy])
     end
 
 

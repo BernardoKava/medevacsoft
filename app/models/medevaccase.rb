@@ -5,6 +5,7 @@ class Medevaccase < ApplicationRecord
   has_many :contactpeople, inverse_of: :medevaccase, :dependent => :destroy
   has_many :stakeholders, inverse_of: :medevaccase, :dependent => :destroy
   has_many :casenotes, inverse_of: :medevaccase, :dependent => :destroy
+  has_many :casefiles,inverse_of: :medevaccase, :dependent => :destroy
   belongs_to :hospital
   belongs_to :rhospital
   accepts_nested_attributes_for :patients, reject_if: :all_blank, allow_destroy: true
@@ -12,7 +13,7 @@ class Medevaccase < ApplicationRecord
   accepts_nested_attributes_for :contactpeople, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :stakeholders, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :casenotes, reject_if: :all_blank, allow_destroy: true
-
+  accepts_nested_attributes_for :casefiles, reject_if: :all_blank, allow_destroy: true
   mount_uploader :document, DocumentUploader
   validate              :document_size
 

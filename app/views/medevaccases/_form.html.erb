@@ -148,37 +148,44 @@
   <hr/>
   <strong><h2>I. Case Notes </h2></strong>
   <hr/>
+  <div class="stakeholder-details ">
+    <%= f.fields_for :casenotes do |note| %>
 
-  <%= f.fields_for :casenotes do |note| %>
+      <%= render 'stakeholder_fields', :f => note %>
 
-    <%= render 'stakeholder_fields', :f => note %>
-
-  <% end %>
-  <div class = "links">
-    <%= link_to_add_association 'Add Case-Phase', f, :casenotes %>
-    <p class="count">Total: <span><%= @medevaccase.casenotes.count %></span></p>
+    <% end %>
+    <div class = "links">
+      <%= link_to_add_association 'Add Case-Phase', f, :casenotes %>
+      <p class="count">Total: <span><%= @medevaccase.casenotes.count %></span></p>
+    </div>
   </div>
 
 
   <hr/>
-  <strong><h2>J. Document Upload </h2></strong>
+  <strong><h2>J. Other Document  </h2></strong>
   <hr/>
 
-  <span class="picture">
+
+  <div class="stakeholder-details ">
+    <%= f.fields_for :casefiles do |file| %>
+
+      <%= render 'casefile_fields', :f => file %>
+
+    <% end %>
+    <div class = "links">
+      <%= link_to_add_association 'Add Casefile', f, :casefiles %>
+      <p class="count">Total: <span><%= @medevaccase.casefiles.count %></span></p>
+    </div>
+  </div>
+
+
+  <hr/>
+  <strong><h2>K. Other Document  </h2></strong>
+  <hr/>
+
+  <span class="Document">
     <%= f.file_field :document %>
   </span>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   <hr/>

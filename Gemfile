@@ -17,7 +17,7 @@ gem 'jbuilder',               '2.7.0'
 gem 'bootstrap-sass',         '3.3.7'
 gem 'devise'
 gem 'gravtastic'
-gem 'rails_admin'
+gem 'rails_admin',             '1.1.0'
 gem 'mailboxer'
 gem 'mini_magick'
 gem 'will_paginate'
@@ -25,6 +25,7 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'cocoon'
 gem 'jquery-ui-rails'
 gem 'carrierwave',             '1.2.2'
+gem 'erubis'
 
 
 group :development, :test do

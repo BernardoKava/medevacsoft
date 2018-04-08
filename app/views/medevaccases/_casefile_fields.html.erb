@@ -1,0 +1,15 @@
+
+<div class="nested-fields">
+
+  <div class = "field">
+    <%= f.label  "Title:"  %>
+    <%= f.text_field :title %>
+  </div>
+
+  <span class="Document">
+    <%= f.file_field :document %>
+  </span>
+
+  <%= link_to_remove_association 'Remove Casefile', f %>
+
+</div>
