@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @locate.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @locate.longitude %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @locate.address %>
+</p>
+
+<%= link_to 'Edit', edit_locate_path(@locate) %> |
+<%= link_to 'Back', locates_path %>
