@@ -16,6 +16,21 @@
 </p>
 
 <p>
+  <strong>latitude:</strong>
+  <%= @insurer.latitude %>
+</p>
+
+<p>
+  <strong>longitude:</strong>
+  <%= @insurer.longitude %>
+</p>
+
+<hr/>
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=
+#{@insurer.latitude}%2C#{@insurer.longitude}" %>
+<hr/>
+
+<p>
   <strong>Email:</strong>
   <%= @insurer.email %>
 </p>

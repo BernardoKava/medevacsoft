@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408224858) do
+ActiveRecord::Schema.define(version: 20180411230556) do
 
   create_table "accompanyingpeople", force: :cascade do |t|
     t.string "name"
@@ -73,6 +73,16 @@ ActiveRecord::Schema.define(version: 20180408224858) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "active"
+    t.float "latitude"
+    t.float "longitude"
+  end
+
+  create_table "locates", force: :cascade do |t|
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
@@ -212,6 +222,8 @@ ActiveRecord::Schema.define(version: 20180408224858) do
     t.datetime "updated_at", null: false
     t.string "companyalias"
     t.boolean "entityactive"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "stakeholders", force: :cascade do |t|

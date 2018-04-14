@@ -69,7 +69,7 @@ class InsurersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def insurer_params
-      params.require(:insurer).permit(:name, :companyalias, :address, :email, :phone, :contactperson, :active,
+      params.require(:insurer).permit(:name, :companyalias, :address,:latitude, :longitude, :email, :phone, :contactperson, :active,
                                       vettinginfos_attributes: [:id, :heading, :notes, :_destroy] )
     end
 end

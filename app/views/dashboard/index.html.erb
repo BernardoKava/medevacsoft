@@ -22,6 +22,7 @@
       <li><%= link_to "Service Providers", serviceproviders_path %></li>
       <li><%= link_to "Insurers", insurers_path %></li>
       <li><%= link_to "Broadcasts", posts_path %></li>
+      <li><%= link_to "Locate", locates_path %></li>
       <% if current_user.admin == true %>
         <li><%= link_to "Rhospitals", rhospitals_path %></li>
         <li><%= link_to "Administration Area", rails_admin_path %></li>
@@ -49,9 +50,13 @@
           <li><%= link_to "Hospitals", hospitals_path %></li>
           <li><%= link_to "Service Providers", serviceproviders_path %></li>
           <li><%= link_to "Insurers", insurers_path %></li>
+          <li><%= link_to "Locate", locates_path %></li>
           <% if current_user.clientadmin == true %>
             <li><%= link_to "Management View", medevaccases_distribution_path %></li>
           <% end %>
+      <% else %>
+        <h2><%= link_to "Your Account is not yet active or is on hold. Please Contact your corporate account administrator
+        for more information. ", dashboard_index_url %></h2>
       <% end %>
         </ul>
 

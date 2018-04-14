@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :locates
   get 'prereg/index'
 
   resources :posts

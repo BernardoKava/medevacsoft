@@ -4,4 +4,6 @@ class Serviceprovider < ApplicationRecord
   has_many :pvettinginfos, inverse_of: :serviceprovider, :dependent => :destroy
   accepts_nested_attributes_for :serviceportfolios, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :pvettinginfos, reject_if: :all_blank, allow_destroy: true
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
 end

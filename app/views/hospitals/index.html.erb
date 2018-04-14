@@ -30,7 +30,7 @@
 
           <% if current_user.admin == true %>
             <td><%= link_to 'Edit', edit_hospital_path(hospital), class:"btn btn-info" %></td>
-            <td><%= link_to 'Destroy', hospital, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger"%></td>
+            <td><%= link_to 'Delete', hospital, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger"%></td>
           <% end %>
         </tr>
       <% end %>

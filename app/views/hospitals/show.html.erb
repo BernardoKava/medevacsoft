@@ -34,13 +34,18 @@
   <strong>Email:</strong>
   <%= @hospital.email %>
 </p>
-
+<hr/>
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=
+#{@hospital.latitude}%2C#{@hospital.longitude}" %>
+<hr/>
 <p>
   <strong>Info:</strong>
   <textarea rows="4" cols="50" readonly>
   <%= @hospital.info %>
   </textarea>
 </p>
+
+
 
 <% if current_user.admin == true %>
   <%= link_to 'Edit', edit_hospital_path(@hospital), class: "btn btn-info" %> |
