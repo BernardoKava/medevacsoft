@@ -6,8 +6,12 @@ class Medevaccase < ApplicationRecord
   has_many :stakeholders, inverse_of: :medevaccase, :dependent => :destroy
   has_many :casenotes, inverse_of: :medevaccase, :dependent => :destroy
   has_many :casefiles,inverse_of: :medevaccase, :dependent => :destroy
+
   belongs_to :hospital
   belongs_to :rhospital
+  belongs_to :fcountry
+  belongs_to :tcountry
+
   accepts_nested_attributes_for :patients, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :accompanyingpeople, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :contactpeople, reject_if: :all_blank, allow_destroy: true

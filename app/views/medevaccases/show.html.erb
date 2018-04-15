@@ -99,13 +99,13 @@
 </p>
 
 <p>
-  <strong>To Country:</strong>
-  <%= @medevaccase.toCountry %>
+  <strong>From [Country]:</strong>
+  <%= @medevaccase.fcountry.name %>
 </p>
 
 <p>
-  <strong>From Country:</strong>
-  <%= @medevaccase.fromCountry %>
+  <strong>To [Country]:</strong>
+  <%= @medevaccase.tcountry.name %>
 </p>
 
 
@@ -231,7 +231,7 @@
   </p>
 
   <p>
-    <strong>Mission Complete:</strong>
+    <strong>Mission State:</strong>
     <%= @medevaccase.missioncomplete %>
   </p>
 

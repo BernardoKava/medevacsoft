@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180411230556) do
+ActiveRecord::Schema.define(version: 20180415082505) do
 
   create_table "accompanyingpeople", force: :cascade do |t|
     t.string "name"
@@ -46,6 +46,12 @@ ActiveRecord::Schema.define(version: 20180411230556) do
     t.string "relationship"
     t.string "patientconsent"
     t.integer "medevaccase_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fcountries", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -160,6 +166,8 @@ ActiveRecord::Schema.define(version: 20180411230556) do
     t.integer "rhospital_id"
     t.float "cost"
     t.string "document"
+    t.integer "fcountry_id"
+    t.integer "tcountry_id"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -237,6 +245,12 @@ ActiveRecord::Schema.define(version: 20180411230556) do
     t.integer "medevaccase_id"
   end
 
+  create_table "tcountries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.boolean "admin"
     t.string "email", default: "", null: false
@@ -257,6 +271,7 @@ ActiveRecord::Schema.define(version: 20180411230556) do
     t.integer "serviceprovider_id"
     t.string "active"
     t.boolean "vetted"
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

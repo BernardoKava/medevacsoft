@@ -17,22 +17,23 @@ class MedevaccasesController < ApplicationController
   end
 
   def dispatcheropencases
+    @tcountryname =
     @title = '[Open Cases - Dispatcher View]'
-    @elem = 'No'
+    @elem = 'Ongoing'
     @medevaccases = Medevaccase.where(missioncomplete: @elem)
     render action: :index
   end
 
   def dispatcherclosedcases
     @title = '[Closed Cases - Dispatcher View]'
-    @elem = 'Yes'
+    @elem = 'Complete'
     @medevaccases = Medevaccase.where(missioncomplete: @elem)
     render action: :index
   end
 
   def opencases
     @title = '[Open Cases]'
-    @elem = 'No'
+    @elem = 'Ongoing'
     @user = current_user.email
     @medevaccases = Medevaccase.where(missioncomplete: @elem, email: @user)
     render action: :index
@@ -40,7 +41,7 @@ class MedevaccasesController < ApplicationController
 
   def closedcases
     @title = '[Closed Cases]'
-    @elem = 'Yes'
+    @elem = 'Complete'
     @user = current_user.email
     @medevaccases = Medevaccase.where(missioncomplete: @elem, email: @user)
     render action: :index
@@ -60,7 +61,7 @@ class MedevaccasesController < ApplicationController
 
   def distribution
     @title = '[Manager View]'
-    @casebycompany = current_user.companyalias
+    @casebycompany = users.companyalias
     @medevaccases = Medevaccase.where(caseownercompany: @casebycompany)
     render action: :index
   end
@@ -118,7 +119,7 @@ class MedevaccasesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def medevaccase_params
       params.require(:medevaccase).permit(:catName,
-                                          :startDate, :completionDate, :toCountry, :fromCountry, :hospital_id,
+                                          :startDate, :completionDate, :tcountry_id, :fcountry_id,  :hospital_id,
                                           :rhospital_id,
                                           :notes, :missioncomplete,
                                           :email, :caseownercompany, :cost, :document,

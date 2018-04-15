@@ -27,6 +27,7 @@ gem 'jquery-ui-rails'
 gem 'carrierwave',             '1.2.2'
 gem 'erubis'
 gem 'geocoder'
+gem 'faker'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

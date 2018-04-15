@@ -13,11 +13,13 @@
       <w>contactpeople</w>
       <w>dashboardcontent</w>
       <w>expediating</w>
+      <w>fcountry</w>
       <w>lname</w>
       <w>misceleneous</w>
       <w>patientconsent</w>
       <w>postdisplay</w>
       <w>rhospital</w>
+      <w>tcountry</w>
     </words>
   </dictionary>
 </component>

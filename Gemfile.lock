@@ -79,6 +79,8 @@ GEM
     erubis (2.7.0)
     excon (0.62.0)
     execjs (2.7.0)
+    faker (1.7.3)
+      i18n (~> 0.5)
     ffi (1.9.23)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -472,6 +474,7 @@ DEPENDENCIES
   coffee-rails (= 4.2.2)
   devise
   erubis
+  faker
   fog (= 1.42)
   geocoder
   gravtastic

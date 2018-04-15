@@ -3,7 +3,8 @@
   <%= render 'errors_messages' %>
   <hr />
 
-  <strong><h2>A. Case Owner Details</h2></strong>
+  <strong><h4>A. Case Owner Details</h4></strong>
+  <br/>
   <div class="field">
     <%= f.label "Case Owner Reference:" %>
     <%= f.text_field :user_id %>
@@ -21,7 +22,8 @@
 
   <hr />
 
-  <strong><h2>B. Patient Details</h2></strong>
+  <strong><h4>B. Patient Details</h4></strong>
+  <br>
   <div class="patient-details ">
     <%= f.fields_for :patients do |patient| %>
 
@@ -35,11 +37,21 @@
   </div>
 
   <hr />
-  <strong><h2>C. Case Details</h2></strong>
+  <strong><h4>C. Case Details</h4></strong>
+  <br>
 
-  <div class="field">
-    <%= f.label "[Case] Category:" %>
-    <%= f.text_field :catName %>
+  <div class="control-group">
+
+    <%= f.label "Case Type:", class: 'control-label' %>
+    <div class ="controls">
+      <%= f.select(:catName, options_for_select([['Air Ambulance','Air Ambulance'], ['Ground Ambulance',
+                                                                                     'Ground Ambulance'],
+                                                 ['Commercial Flight','Commercial Flight'],
+                                                 ['Commercial Flight with Medical Escort',
+                                                  'Commercial Flight with Medical Escort'], ['Repatriation Of Mortal
+                                                  Remains','Repatriation of Mortal Remains']])) %>
+    </div>
+
   </div>
 
   <div class="field">
@@ -47,10 +59,6 @@
     <%= f.date_select :startDate %>
   </div>
 
-  <div class="field">
-    <%= f.label "[Case] Completion Date:" %>
-    <%= f.date_select :completionDate %>
-  </div>
 
   <div class="field">
     <%= f.label "[Case] Cost:" %>
@@ -58,44 +66,50 @@
   </div>
 
   <div class="control-group">
-    <%= f.label "From (County):", class: 'control-label' %>
+    <%= f.label :fcountry_id, "From [Country]",class: 'control-label' %>
     <div class ="controls">
-      <%= f.select(:fromCountry, options_for_select([['Congo','Congo'], ['France','France']])) %>
+      <%= f.collection_select :fcountry_id, Fcountry.order(:name), :id, :name, include_blank: true %>
+    </div>
+
+  </div>
+
+
+  <div class="control-group">
+    <%= f.label :tcountry_id, "To [Country]",class: 'control-label' %>
+    <div class ="controls">
+      <%= f.collection_select :tcountry_id, Tcountry.order(:name), :id, :name, include_blank: true %>
     </div>
   </div>
 
 
-  <div class="field">
-    <%= f.label :toCountry %>
-    <%= f.text_field :toCountry %>
-  </div>
-
 <hr />
-  <strong><h2>D. Expediating Hospital Details</h2></strong>
-
+  <strong><h4>D. Expediating Hospital Details</h4></strong>
+  <br>
 
   <div class="control-group">
     <%= f.label :hospital_id, "Hospital Name",class: 'control-label' %>
     <div class ="controls">
       <%= f.collection_select :hospital_id, Hospital.order(:name), :id, :name, include_blank: true %>
     </div>
+    <%= link_to "Browse To hospital",hospitals_url %>
   </div>
 
   <hr />
-  <strong><h2>E. Receiving Hospital Details</h2></strong>
-
+  <strong><h4>E. Receiving Hospital Details</h4></strong>
+  <br>
 
   <div class="control-group">
     <%= f.label :rhospital_id, "Hospital Name",class: 'control-label' %>
     <div class ="controls">
       <%= f.collection_select :rhospital_id, Rhospital.order(:name), :id, :name, include_blank: true %>
     </div>
+    <%= link_to  "Browse To hospital",hospitals_url %>
   </div>
 
   <hr />
 
-  <strong><h2>F. Accompanying Person(s) Details</h2></strong>
-
+  <strong><h4>F. Accompanying Person(s) Details</h4></strong>
+  <br>
   <div class="accompanyingpeople-details ">
     <%= f.fields_for :accompanyingpeople do |person| %>
 
@@ -110,8 +124,8 @@
 
   <hr/>
 
-  <strong><h2>G. Contact Person(s) Details</h2></strong>
-
+  <strong><h4>G. Contact Person(s) Details</h4></strong>
+  <br>
   <div class="contactpeople-details ">
     <%= f.fields_for :contactpeople do |person| %>
 
@@ -126,9 +140,8 @@
 
   <hr/>
 
-  <strong><h2>H. Stakeholder(s) Details</h2></strong>
-
-  <hr/>
+  <strong><h4>H. Stakeholder(s) Details</h4></strong>
+  <br>
 
   <div class="stakeholder-details ">
     <%= f.fields_for :stakeholders do |stakeholder| %>
@@ -146,7 +159,7 @@
 
 
   <hr/>
-  <strong><h2>I. Case Notes </h2></strong>
+  <strong><h4>I. Case Notes </h4></strong>
   <hr/>
   <div class="stakeholder-details ">
     <%= f.fields_for :casenotes do |note| %>
@@ -162,7 +175,7 @@
 
 
   <hr/>
-  <strong><h2>J. Other Document  </h2></strong>
+  <strong><h4>J. Other Document  </h4></strong>
   <hr/>
 
 
@@ -180,7 +193,7 @@
 
 
   <hr/>
-  <strong><h2>K. Other Document  </h2></strong>
+  <strong><h4>K. Other Document  </h4></strong>
   <hr/>
 
   <span class="Document">
@@ -198,13 +211,18 @@
 
   <div class="control-group">
 
-    <%= f.label "Mission Complete:", class: 'control-label' %>
+    <%= f.label "Mission State:", class: 'control-label' %>
     <div class ="controls">
-      <%= f.select(:missioncomplete, options_for_select([['No','No'], ['Yes','Yes']])) %>
+      <%= f.select(:missioncomplete, options_for_select([['Ongoing','Ongoing'], ['Complete','Complete']])) %>
     </div>
 
   </div>
 
+
+  <div class="field">
+    <%= f.label "[Case] Completion Date:" %>
+    <%= f.date_select :completionDate %>
+  </div>
 
 
 
