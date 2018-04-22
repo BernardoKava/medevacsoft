@@ -1,9 +1,20 @@
 
 <div class="nested-fields">
 
-  <div class = "field">
-    <%= f.label  "Phase:"  %>
-    <%= f.text_field :casephase %>
+  <div class="control-group">
+
+    <%= f.label "Phase:", class: 'control-label' %>
+    <div class ="controls">
+      <%= f.select(:casephase, options_for_select([['Notification','Notification'],
+                                                   ['Information Gathering','Information Gathering'],
+                                                   ['Quotation Request','Quotation Request'],
+                                                   ['Quotation Acceptance', 'Quotation Acceptance'],[
+
+                                                   'Mission Activation','Mission Activation'],
+                                                   ['Mission Following','Mission Following'], ['Case Completion',
+                                                                                               'Case Completion']])) %>
+    </div>
+
   </div>
 
   <div class = "field">
