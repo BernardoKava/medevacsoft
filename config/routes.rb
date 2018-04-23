@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
   get 'medevaccases/distribution'
 
+  get 'medevaccases/pdistribution'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users

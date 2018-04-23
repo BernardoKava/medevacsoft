@@ -11,6 +11,9 @@
   <% else %>
     <strong><p class="alert">[[i]] Non-Admin</p></strong>
   <% end %>
+
+
+
   <hr />
   <div class = "horizontal-menu">
     <ul>
@@ -22,7 +25,7 @@
       <li><%= link_to "Service Providers", serviceproviders_path %></li>
       <li><%= link_to "Insurers", insurers_path %></li>
       <li><%= link_to "Broadcasts", posts_path %></li>
-      <li><%= link_to "Locate", locates_path %></li>
+
       <% if current_user.admin == true %>
         <li><%= link_to "Rhospitals", rhospitals_path %></li>
         <li><%= link_to "Administration Area", rails_admin_path %></li>
@@ -32,9 +35,27 @@
       <% end %>
     </ul>
   </div>
+
+<% elsif current_user.serviceprovider == true %>
+  <hr/>
+  Your Account Name: (<%= current_user.companyalias %>)
+
+  <hr/>
+
+
+  <div class = "horizontal-menu">
+    <ul>
+      <li><%= link_to "Cases", medevaccases_pdistribution_path %></li>
+      <li><%= link_to "CaseMails", all_conversations_path %></li>
+      <li><%= link_to "Insurers", insurers_path %></li>
+      <li><%= link_to "Hospitals", hospitals_path %></li>
+      <li><%= link_to "Service Providers", serviceproviders_path %></li>
+    </ul>
+  </div>
 <% else %>
   <h2>My Dashboard</h2>
   <hr />
+  Your Account Name: (<%= current_user.companyalias %>)
 
     <div>
 
@@ -50,7 +71,7 @@
           <li><%= link_to "Hospitals", hospitals_path %></li>
           <li><%= link_to "Service Providers", serviceproviders_path %></li>
           <li><%= link_to "Insurers", insurers_path %></li>
-          <li><%= link_to "Locate", locates_path %></li>
+
           <% if current_user.clientadmin == true %>
             <li><%= link_to "Management View", medevaccases_distribution_path %></li>
           <% end %>

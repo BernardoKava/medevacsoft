@@ -83,6 +83,7 @@
     <strong>Contactperson:</strong>
     <%= @serviceprovider.contactperson %>
   </p>
-
-<%= link_to 'Edit', edit_serviceprovider_path(@serviceprovider) %> |
+<% if current_user.admin == true %>
+<%= link_to 'Edit', edit_serviceprovider_path(@serviceprovider) %>
+<% end %>
 <%= link_to 'Back', serviceproviders_path %>

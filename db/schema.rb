@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180415082505) do
+ActiveRecord::Schema.define(version: 20180422220416) do
 
   create_table "accompanyingpeople", force: :cascade do |t|
     t.string "name"
@@ -168,6 +168,7 @@ ActiveRecord::Schema.define(version: 20180415082505) do
     t.string "document"
     t.integer "fcountry_id"
     t.integer "tcountry_id"
+    t.string "serviceprovider"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -272,6 +273,7 @@ ActiveRecord::Schema.define(version: 20180415082505) do
     t.string "active"
     t.boolean "vetted"
     t.string "name"
+    t.boolean "serviceprovider"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

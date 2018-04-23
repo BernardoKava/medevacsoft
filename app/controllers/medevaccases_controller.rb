@@ -61,11 +61,18 @@ class MedevaccasesController < ApplicationController
 
   def distribution
     @title = '[Manager View]'
-    @casebycompany = users.companyalias
+    @casebycompany = current_user.companyalias
     @medevaccases = Medevaccase.where(caseownercompany: @casebycompany)
     render action: :index
   end
 
+  def pdistribution
+    @title = '[Provider View]'
+    @elem = 'Ongoing'
+    @provider = current_user.companyalias
+    @medevaccases = Medevaccase.where(serviceprovider: @provider,missioncomplete: @elem)
+    render action: :index
+  end
   # GET /medevaccases/1/edit
   def edit
   end
@@ -121,7 +128,7 @@ class MedevaccasesController < ApplicationController
       params.require(:medevaccase).permit(:catName,
                                           :startDate, :completionDate, :tcountry_id, :fcountry_id,  :hospital_id,
                                           :rhospital_id,
-                                          :notes, :missioncomplete,
+                                          :notes, :missioncomplete, :serviceprovider,
                                           :email, :caseownercompany, :cost, :document,
                                           patients_attributes: [:id, :fname, :lname, :dob, :diagnosis,
                                                                 :treatment, :phone, :email, :nationality, :_destroy],
