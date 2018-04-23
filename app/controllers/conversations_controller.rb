@@ -1,4 +1,7 @@
 class ConversationsController < ApplicationController
+
+  # Adapted from Gorails screen casts by Chris Oliver.  Gorails.com
+
   def index
     @conversations = current_user.mailbox.conversations.paginate(:page => params[:page], :per_page => 4)
   end
