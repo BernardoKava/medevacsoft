@@ -311,16 +311,16 @@ Insurer.create!(name:  "International SOS ",
                 active: true)
 
 # Dispatcher Admin
-User.create!(name:  "Bernardo Kava",
-                email: "bernardo.kava.bk@gmail.com",
-                admin: true ,
-                dispatcher: true,
-                companyalias: "Mededevacsoft inc",
-                active: true,
-             vetted: true,
-             clientadmin: false,
-             password: "password",
-             password_confirmation:"password")
+# User.create!(name:  "Bernardo Kava",
+              #  email: "bernardo.kava.bk@gmail.com",
+              #  admin: true ,
+             #   dispatcher: true,
+             #   companyalias: "Mededevacsoft inc",
+             #   active: true,
+            # vetted: true,
+           #  clientadmin: false,
+          #   password: "password",
+          #   password_confirmation:"password")
 
 # Dispatcher non-Admin
 User.create!(name:  "Thomas James",
