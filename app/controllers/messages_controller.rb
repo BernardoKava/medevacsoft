@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_conversation
-
+  # Adapted from Gorails screen casts by Chris Oliver.  Gorails.com
   def create
     current_user.reply_to_conversation(@conversation, params[:mailboxer_message][:body],
                                        nil, true, true, params[:mailboxer_message][:attachment])

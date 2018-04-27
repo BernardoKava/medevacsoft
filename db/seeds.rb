@@ -22,13 +22,13 @@ CSV.foreach(Rails.root.join("countries.csv"), headers: true) do |row|
   end
 end
 
- # Expediating Hospitals
+# Expediating Hospitals
 
 Hospital.create!(name:  "St Bernardo Hospital ",
                  address: "149 Rue de Sèvres 75015 Paris France",
                  country: "France",
                  phone: "+0033510789632541",
-             email: "stbernardo@example.com",
+                 email: "stbernardo@example.com",
                  info: "This is a children hospital with all the modern equipments.
 Services:  Radiology, chemo Specialist, EMN, MRI etc...")
 
@@ -108,48 +108,48 @@ Hospital.create!(name:  "St James Hospital  ",
 Services:  Radiology, chemo Specialist, EMN, MRI etc...")
 
 
- # Receiving Hospitals
+# Receiving Hospitals
 
 
 Rhospital.create!(name:  "St Bernardo Hospital ",
-                 address: "149 Rue de Sèvres 75015 Paris France",
-                 country: "France",
-                 phone: "+0033510789632541",
-                 email: "stbernardo@example.com",
-                 info: "This is a children hospital with all the modern equipments.
+                  address: "149 Rue de Sèvres 75015 Paris France",
+                  country: "France",
+                  phone: "+0033510789632541",
+                  email: "stbernardo@example.com",
+                  info: "This is a children hospital with all the modern equipments.
 Services:  Radiology, chemo Specialist, EMN, MRI etc...")
 
 Rhospital.create!(name:  "St Paradise Hospital ",
-                 address: "26 Chris Hani Rd Diepkloof 319-Iq Johannesburg 1860 South Africa",
-                 country: "South Africa",
-                 phone: "+0012345647895",
-                 email: "paradise@example.com",
-                 info: "This is a normal hospital with all the modern equipments.
+                  address: "26 Chris Hani Rd Diepkloof 319-Iq Johannesburg 1860 South Africa",
+                  country: "South Africa",
+                  phone: "+0012345647895",
+                  email: "paradise@example.com",
+                  info: "This is a normal hospital with all the modern equipments.
 Services:  Radiology, chemo Specialist, EMN, MRI etc...")
 
 
 Rhospital.create!(name:  "Qatar General Hospital ",
-                 address: "Doha Clinic Hospital Doha Qatar",
-                 country: "Qatar",
-                 phone: "+0012345647895",
-                 email: "qatar@example.com",
-                 info: "This is a normal hospital with all the modern equipments.
+                  address: "Doha Clinic Hospital Doha Qatar",
+                  country: "Qatar",
+                  phone: "+0012345647895",
+                  email: "qatar@example.com",
+                  info: "This is a normal hospital with all the modern equipments.
 Services:  Radiology, chemo Specialist, EMN, MRI etc...")
 
 Rhospital.create!(name:  "Al Zahra Hopsital ",
-                 address: " Sheikh Zayed Rd  Dubai  United Arab Emirates",
-                 country: "United Arab Emirates",
-                 phone: "+0012345647895",
-                 email: "dubai@example.com",
-                 info: "This is a normal hospital with all the modern equipments.
+                  address: " Sheikh Zayed Rd  Dubai  United Arab Emirates",
+                  country: "United Arab Emirates",
+                  phone: "+0012345647895",
+                  email: "dubai@example.com",
+                  info: "This is a normal hospital with all the modern equipments.
 Services:  Radiology, chemo Specialist, EMN, MRI etc...")
 
 Rhospital.create!(name:  "St James Hospital  ",
-                 address: " James's Street Ushers Dublin 8",
-                 country: "Ireland",
-                 phone: "+0012345647895",
-                 email: "StJames@example.com",
-                 info: "This is a normal hospital with all the modern equipments.
+                  address: " James's Street Ushers Dublin 8",
+                  country: "Ireland",
+                  phone: "+0012345647895",
+                  email: "StJames@example.com",
+                  info: "This is a normal hospital with all the modern equipments.
 Services:  Radiology, chemo Specialist, EMN, MRI etc...")
 
 Rhospital.create!(name:  "St Bernardo Hospital ",
@@ -196,10 +196,10 @@ Services:  Radiology, chemo Specialist, EMN, MRI etc...")
 # Providers
 
 Serviceprovider.create!(name:  "Medelink SA ",
-                  address: " 99 Triq il-Mitħna Ħal Qormi QRM3100 Malta",
-                  phone: "+0012345647895",
-                  email: "Medilink@example.com",
-                  contactperson: "Peter Smith",
+                        address: " 99 Triq il-Mitħna Ħal Qormi QRM3100 Malta",
+                        phone: "+0012345647895",
+                        email: "Medilink@example.com",
+                        contactperson: "Peter Smith",
                         companyalias: "Medelink",
                         entityactive: "yes")
 
@@ -246,12 +246,12 @@ Serviceprovider.create!(name:  "Bernardo Jets ltd ",
 # Insurers
 
 Insurer.create!(name:  "Allianz International Health SA ",
-                        address: "12 Joyce way parkwest dublin 12",
-                        phone: "+0012345647895",
-                        email: "allianz@example.com",
-                        contactperson: "James Billington",
-                        companyalias: "Allianz",
-                        active: true)
+                address: "12 Joyce way parkwest dublin 12",
+                phone: "+0012345647895",
+                email: "allianz@example.com",
+                contactperson: "James Billington",
+                companyalias: "Allianz",
+                active: true)
 
 Insurer.create!(name:  "International SOS ",
                 address: "Dubai Airport Freezone 7W Block B 4th Floor",
@@ -311,16 +311,16 @@ Insurer.create!(name:  "International SOS ",
                 active: true)
 
 # Dispatcher Admin
-# User.create!(name:  "Bernardo Kava",
-              #  email: "bernardo.kava.bk@gmail.com",
-              #  admin: true ,
-             #   dispatcher: true,
-             #   companyalias: "Mededevacsoft inc",
-             #   active: true,
-            # vetted: true,
-           #  clientadmin: false,
-          #   password: "password",
-          #   password_confirmation:"password")
+User.create!(name:  "Bernardo Kava",
+             email: "bernardo.kava.bk@gmail.com",
+             admin: true ,
+             dispatcher: true,
+             companyalias: "Mededevacsoft inc",
+             active: true,
+             vetted: true,
+             clientadmin: false,
+             password: "password",
+             password_confirmation:"password")
 
 # Dispatcher non-Admin
 User.create!(name:  "Thomas James",
@@ -335,7 +335,7 @@ User.create!(name:  "Thomas James",
              password_confirmation:"password")
 
 
- # Insurer non-manager
+# Insurer non-manager
 User.create!(name:  "Peter Marks",
              email: "Peter.Marks@example.com",
              admin: false,
@@ -361,8 +361,8 @@ User.create!(name:  "Jason Booth",
 
 # Insurer  Manager
 
-User.create!(name:  "John Bossman",
-             email: "John.bossman@example.com",
+User.create!(name:  "Jason Bossman",
+             email: "jason.bossman@example.com",
              admin: false,
              dispatcher: false,
              companyalias: "Allianz",
