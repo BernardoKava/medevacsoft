@@ -335,7 +335,7 @@ User.create!(name:  "Thomas James",
              password_confirmation:"password")
 
 
- # Provider non-manager
+ # Insurer non-manager
 User.create!(name:  "Peter Marks",
              email: "Peter.Marks@example.com",
              admin: false,
@@ -359,10 +359,10 @@ User.create!(name:  "Jason Booth",
              password: "password",
              password_confirmation:"password")
 
-# Provider Manager
+# Insurer  Manager
 
 User.create!(name:  "John Bossman",
-             email: "Jason.bossman@example.com",
+             email: "John.bossman@example.com",
              admin: false,
              dispatcher: false,
              companyalias: "Allianz",
@@ -372,10 +372,33 @@ User.create!(name:  "John Bossman",
              password: "password",
              password_confirmation:"password")
 
+# Provider
+
+User.create!(name:  "John Providerman",
+             email: "John.providerman@example.com",
+             admin: false,
+             dispatcher: false,
+             companyalias: "FAI rent a jet",
+             active: true,
+             vetted: true,
+             clientadmin: true,
+             password: "password",
+             password_confirmation:"password")
+
+User.create!(name:  "Jason Providerman",
+             email: "Jason.providerman@example.com",
+             admin: false,
+             dispatcher: false,
+             companyalias: "Medelink SA",
+             active: true,
+             vetted: true,
+             clientadmin: true,
+             password: "password",
+             password_confirmation:"password")
 
 # A Few Starter Broadcasts
 
-Post.create!(content:  "Live is great when you code is working !",
+Post.create!(content:  "Empty flight leg From FAI. From Angola to France!",
              email: "Thomas.James@medevacsoft.com")
 
 Post.create!(content:  "Live is great when you code is working !",

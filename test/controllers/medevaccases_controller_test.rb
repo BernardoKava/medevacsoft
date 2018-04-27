@@ -15,13 +15,6 @@ class MedevaccasesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create medevaccase" do
-    assert_difference('Medevaccase.count') do
-      post medevaccases_url, params: { medevaccase: { catName: @medevaccase.catName, completionDate: @medevaccase.completionDate, currentHospitalAddress: @medevaccase.currentHospitalAddress, currentHospitalName: @medevaccase.currentHospitalName, diagnosis: @medevaccase.diagnosis, dob: @medevaccase.dob, fromCountry: @medevaccase.fromCountry, notes: @medevaccase.notes, patientFname: @medevaccase.patientFname, patientLname: @medevaccase.patientLname, receivingHospitalAddress: @medevaccase.receivingHospitalAddress, receivingHospitalName: @medevaccase.receivingHospitalName, startDate: @medevaccase.startDate, toCountry: @medevaccase.toCountry, treatment: @medevaccase.treatment } }
-    end
-
-    assert_redirected_to medevaccase_url(Medevaccase.last)
-  end
 
   test "should show medevaccase" do
     get medevaccase_url(@medevaccase)

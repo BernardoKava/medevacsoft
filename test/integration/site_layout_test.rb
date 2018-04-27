@@ -13,3 +13,4 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
 
   end
 end
+
